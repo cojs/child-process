@@ -1,0 +1,33 @@
+{
+  "name": "co-spawn",
+  "description": "easily spawn a child process with co",
+  "version": "0.0.0",
+  "author": {
+    "name": "Jonathan Ong",
+    "email": "me@jongleberry.com",
+    "url": "http://jongleberry.com",
+    "twitter": "https://twitter.com/jongleberry"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cojs/spawn.git"
+  },
+  "bugs": {
+    "mail": "me@jongleberry.com",
+    "url": "https://github.com/cojs/spawn/issues"
+  },
+  "devDependencies": {
+    "co": "*",
+    "mocha": "*",
+    "should": "*",
+    "gnode": "~0.0.6",
+    "uglify-js": "*"
+  },
+  "scripts": {
+    "test": "NODE=gnode make test"
+  },
+  "engines": {
+    "node": ">= 0.11.9"
+  }
+}
