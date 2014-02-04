@@ -1,4 +1,4 @@
-# Co Spawn
+# Co Child Process
 
 Spawn a child process using `co`. Kind of like `exec`, except you can write to `stdin` and there aren't as many options like timeout or encoding.
 
@@ -9,7 +9,7 @@ Minify a Javascript in a child process. Useful when the JS files are large and y
 ```js
 var fs = require('fs')
 var co = require('co')
-var spawn = require('co-spawn')
+var spawn = require('co-child-process')
 // resolve the location of the binary
 var uglifyjs = require.resolve('uglify-js/bin/uglifyjs')
 

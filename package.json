@@ -1,5 +1,5 @@
 {
-  "name": "co-spawn",
+  "name": "co-child-process",
   "description": "easily spawn a child process with co",
   "version": "0.0.0",
   "author": {
@@ -11,11 +11,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cojs/spawn.git"
+    "url": "https://github.com/cojs/child-process.git"
   },
   "bugs": {
     "mail": "me@jongleberry.com",
-    "url": "https://github.com/cojs/spawn/issues"
+    "url": "https://github.com/cojs/child-process/issues"
   },
   "devDependencies": {
     "co": "*",
