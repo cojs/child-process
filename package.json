@@ -11,13 +11,13 @@
   "license": "MIT",
   "repository": "cojs/child-process",
   "devDependencies": {
-    "co": "*",
-    "mocha": "*",
-    "should": "*",
-    "uglify-js": "*"
+    "co": "^4.6.0",
+    "mocha": "^3.0.0",
+    "should": "^10.0.0",
+    "uglify-js": "^2.7.0"
   },
   "scripts": {
-    "test": "mocha --harmony-generators --require should --reporter spec"
+    "test": "mocha --require should --reporter spec"
   },
   "main": "lib"
 }
