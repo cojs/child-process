@@ -1,7 +1,7 @@
 {
   "name": "co-child-process",
   "description": "easily spawn a child process with co",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "author": {
     "name": "Jonathan Ong",
     "email": "me@jongleberry.com",
