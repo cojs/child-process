@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/cojs/child-process.svg?branch=master)](https://travis-ci.org/cojs/child-process)
+
 # Co Child Process
 
 Spawn a child process using `co`. Kind of like `exec`, except you can write to `stdin` and there aren't as many options like timeout or encoding.
