@@ -1,4 +1,5 @@
 var co = require('co')
+var path = require('path')
 var readable = require('stream').Readable
 
 var spawn = require('..')
@@ -21,12 +22,24 @@ describe('co-spawn', function () {
     out.should.equal('var a=1;\n')
   }))
 
-  it('should work with errors', () => co(function* () {
+  it('should work with spawn errors', () => co(function* () {
     try {
       yield spawn('laksjdflkajsdf')
       throw new Error('wtf')
     } catch (err) {
       err.code.should.equal('ENOENT')
+    }
+  }))
+
+  it('should work with program errors', () => co(function* () {
+    try {
+      yield spawn(path.join(__dirname, 'fixtures', 'error-bin.js'))
+      throw new Error('wtf')
+    } catch (err) {
+      err.code.should.equal(1)
+      err.stdout.should.equal('stdout output\n')
+      err.stderr.should.containEql('stderr output\n')
+      err.stderr.should.containEql('Error: Error message\n')
     }
   }))
 })
