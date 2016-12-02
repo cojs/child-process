@@ -24,22 +24,30 @@ describe('co-spawn', function () {
 
   it('should work with spawn errors', () => co(function* () {
     try {
-      yield spawn('laksjdflkajsdf')
+      yield spawn('laksjdflkajsdf', ['foo', 'bar'], {cwd: __dirname})
       throw new Error('wtf')
     } catch (err) {
       err.code.should.equal('ENOENT')
+      err.stdout.should.equal('')
+      err.stderr.should.equal('')
+      err.command.should.equal('laksjdflkajsdf')
+      err.args.should.deepEqual(['foo', 'bar'])
+      err.options.should.deepEqual({cwd: __dirname})
     }
   }))
 
   it('should work with program errors', () => co(function* () {
     try {
-      yield spawn(path.join(__dirname, 'fixtures', 'error-bin.js'))
+      yield spawn(path.join(__dirname, 'fixtures', 'error-bin.js'), ['foo', 'bar'], {cwd: __dirname})
       throw new Error('wtf')
     } catch (err) {
       err.code.should.equal(1)
       err.stdout.should.equal('stdout output\n')
       err.stderr.should.containEql('stderr output\n')
       err.stderr.should.containEql('Error: Error message\n')
+      err.command.should.equal(path.join(__dirname, 'fixtures', 'error-bin.js'))
+      err.args.should.deepEqual(['foo', 'bar'])
+      err.options.should.deepEqual({cwd: __dirname})
     }
   }))
 })
